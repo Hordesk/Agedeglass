@@ -28,7 +28,7 @@ public class WebService {
         if(nomMedocExiste(nomMedoc)) {
             String url = host + "action=1" + "&nomDuMedoc=" + nomMedoc;
             String res = attackWS(url);
-            System.out.println("res=" + res);
+            System.out.println("Appel de getStock res=" + res);
             return Integer.parseInt(res);
         } else {
             return -1;
