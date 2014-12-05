@@ -11,6 +11,9 @@ import android.widget.TextView;
 
 public class HelloWorldActivity extends Activity {
 
+
+    TextView helloWorld;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,7 +22,7 @@ public class HelloWorldActivity extends Activity {
         /*
          * Mise en place de police perso sur le txt
          */
-        TextView helloWorld = (TextView) findViewById(R.id.txt);
+        helloWorld = (TextView) findViewById(R.id.txt);
         helloWorld.setTypeface(Typeface.createFromAsset(getAssets(), "Roboto-Thin.ttf"));
     }
 
