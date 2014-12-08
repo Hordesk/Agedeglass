@@ -2,7 +2,7 @@ package fr.nuitdelinfo.dtc.agedeglass.fr.nuitdelinfo.dtc.agedeglass.recovocale;
 
 import android.app.Activity;
 import android.content.Context;
-import android.graphics.Color;
+import android.content.Intent;
 import android.view.View;
 import android.widget.TextView;
 
@@ -10,7 +10,9 @@ import java.text.Normalizer;
 import java.util.ArrayList;
 
 import fr.nuitdelinfo.dtc.agedeglass.R;
+import fr.nuitdelinfo.dtc.barcodeeye.scan.CaptureActivity;
 import fr.nuitdelinfo.dtc.service.WebService;
+import fr.nuitdelinfo.dtc.barcodeeye.LaunchActivity;
 
 
 public class VoiceController {
@@ -105,18 +107,7 @@ public class VoiceController {
                     }
 
                 }
-//                for(String ordre : VoiceGlobalVars.addPatternsRecognition){
-//                    if (unResultat.matches(ordre + )){
-//                        VoiceActivity.principalText.setText(ordre + medoc);
-//                        return;
-//                    }
-//                }
-//                for(String ordre : VoiceGlobalVars.removePatternsRecognition){
-//                    if (unResultat.matches(ordre + medoc)){
-//                        VoiceActivity.principalText.setText(ordre + medoc);
-//                        return;
-//                    }
-//                }
+
 
 
 
@@ -125,7 +116,15 @@ public class VoiceController {
 
                // activity.findViewById(R.id.voice_activity).startAnimation(invertSlide);
 
+                if (unResultat.matches(".*scan.*")  || unResultat.matches(".*lire.*") || unResultat.matches(".*code.*")){
 
+
+                    Intent inent = new Intent(context, LaunchActivity.class);
+                    inent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    context.startActivity(inent);
+
+
+            }
 
             }
 

@@ -15,6 +15,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import fr.nuitdelinfo.dtc.agedeglass.R;
+import fr.nuitdelinfo.dtc.barcodeeye.LaunchActivity;
 
 public class VoiceActivity extends Activity {
 
@@ -110,4 +111,9 @@ public class VoiceActivity extends Activity {
         voiceController.setActivity(voiceActivity);
         voiceController.beginVoiceRecognition(result, context);
     }
+
+
+    public void startScan(Context context){
+    }
+
 }
